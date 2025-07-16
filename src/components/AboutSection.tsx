@@ -7,15 +7,6 @@ const AboutSection = () => {
     <section id="about" className="py-20 bg-gradient-peaceful">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
-              A Place of Peace, Learning, and Service
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Sri Gunalankara Buddhist Center is dedicated to preserving the timeless teachings of the Buddha while uplifting lives.
-            </p>
-          </div>
 
           {/* Main Content */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
@@ -24,14 +15,13 @@ const AboutSection = () => {
                 Our Mission of Compassion
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Sri Gunalankara Buddhist Center is dedicated to preserving the timeless teachings of the Buddha 
-                while uplifting the lives of individuals and communities through compassion-driven programs. 
-                From supporting elders and children to promoting Dhamma education and environmental care, 
-                our mission blends spiritual development with meaningful action.
+                At our core, we are a compassionate community-driven foundation committed to building a disciplined, spiritually enriched, and united society. Guided by the timeless teachings of the Buddha, we work to uplift individuals and families through meaningful educational, religious, and social initiatives.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                We believe that true spiritual growth comes through service to others, and our programs 
-                reflect this philosophy by addressing both the spiritual and material needs of our community.
+                We organize Dhamma education for children, provide free extra classes for students, and support novice monks in their spiritual journey. Our outreach extends to honoring elderly communities, helping the underprivileged, planting trees for future generations, and building homes for those in need.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                By strengthening the bond between temples and villages, creating opportunities for youth through sports and community service, and cultivating moral values, we strive to leave a lasting impact on society — one rooted in kindness, unity, and spiritual progress.
               </p>
             </div>
 
