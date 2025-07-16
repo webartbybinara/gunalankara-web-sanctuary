@@ -1,110 +1,151 @@
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import React from 'react';
+import { MapPin, Phone, Mail, Clock, Calendar } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const ContactSection = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Address",
-      details: ["123 Peaceful Lane", "Harmony City, HC 12345"]
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      details: ["(555) 123-4567", "Available 9 AM - 6 PM"]
+      title: 'Visit Us',
+      content: 'Sri Gunalankara Buddhist Center\nSri Lanka',
+      description: 'Our temple welcomes all visitors'
     },
     {
       icon: Mail,
-      title: "Email",
-      details: ["info@srigunalankara.org", "meditation@srigunalankara.org"]
+      title: 'Email Us',
+      content: 'info@srigunalankarabc.org\nwelcome@srigunalankarabc.org',
+      description: 'We respond within 24 hours'
+    },
+    {
+      icon: Phone,
+      title: 'WhatsApp',
+      content: '+94 XX XXX XXXX',
+      description: 'Direct communication available'
     },
     {
       icon: Clock,
-      title: "Temple Hours",
-      details: ["Mon-Fri: 6 AM - 8 PM", "Sat-Sun: 5 AM - 9 PM"]
+      title: 'Temple Hours',
+      content: 'Daily: 6:00 AM - 8:00 PM\nSpecial Programs: Check Schedule',
+      description: 'Open for prayer and meditation'
     }
   ];
 
   return (
-    <section id="contact" className="section-peaceful">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Visit Our Center
-          </h2>
-          <p className="text-peaceful text-lg max-w-2xl mx-auto">
-            We welcome you to visit our peaceful sanctuary. Come as you are, 
-            leave with inner peace and wisdom.
-          </p>
-        </div>
+    <section id="contact" className="py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
+              Connect With Us
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Reach out to learn more about our programs, volunteer opportunities, or to get involved 
+              in our mission of spreading compassion throughout Sri Lankan communities.
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
+          {/* Contact Info Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {contactInfo.map((info, index) => (
-              <div key={index} className="flex items-start space-x-4">
-                <div className="bg-primary text-primary-foreground p-3 rounded-lg flex-shrink-0">
-                  <info.icon size={24} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
+              <Card key={index} className="text-center group hover:shadow-golden transition-all duration-300">
+                <CardHeader className="pb-4">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                    <info.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg font-serif font-semibold">
                     {info.title}
-                  </h3>
-                  {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-peaceful">
-                      {detail}
-                    </p>
-                  ))}
-                </div>
-              </div>
+                  </CardTitle>
+                  <CardDescription className="text-muted-foreground text-sm">
+                    {info.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-foreground whitespace-pre-line font-medium">
+                    {info.content}
+                  </p>
+                </CardContent>
+              </Card>
             ))}
           </div>
 
-          {/* Contact Form */}
-          <div className="card-temple">
-            <h3 className="text-2xl font-semibold text-foreground mb-6">
-              Send Us a Message
-            </h3>
-            <form className="space-y-6">
+          {/* Main Contact Card */}
+          <div className="bg-gradient-peaceful rounded-2xl p-8 sm:p-12">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="Your full name"
-                />
+                <h3 className="text-2xl sm:text-3xl font-serif font-semibold text-foreground mb-6">
+                  Plan Your First Visit
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  We encourage you to join us for any of our regular programs. No prior experience 
+                  or registration is required - simply arrive with an open heart and mind.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-start space-x-3">
+                    <Calendar className="w-5 h-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-semibold text-foreground">Sunday Meditation</p>
+                      <p className="text-sm text-muted-foreground">Perfect for first-time visitors</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Calendar className="w-5 h-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-semibold text-foreground">Wednesday Dharma Study</p>
+                      <p className="text-sm text-muted-foreground">Interactive learning sessions</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Calendar className="w-5 h-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-semibold text-foreground">Saturday Beginners Class</p>
+                      <p className="text-sm text-muted-foreground">Gentle introduction to meditation</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button variant="default" size="lg">
+                    <MapPin className="w-5 h-5" />
+                    Get Directions
+                  </Button>
+                  <Button variant="peaceful" size="lg">
+                    <Mail className="w-5 h-5" />
+                    Send Message
+                  </Button>
+                </div>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="your.email@example.com"
-                />
+
+              <div className="bg-background/50 rounded-xl p-6 backdrop-blur-sm">
+                <h4 className="text-xl font-serif font-semibold text-foreground mb-4">
+                  What to Expect
+                </h4>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start space-x-2">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Comfortable, quiet environment for meditation</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Welcoming community of practitioners</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Guidance for beginners available</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                    <span>No cost or obligation to attend</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Parking available on-site</span>
+                  </li>
+                </ul>
               </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="How can we help you on your spiritual journey?"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full btn-donate"
-              >
-                Send Message
-              </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>

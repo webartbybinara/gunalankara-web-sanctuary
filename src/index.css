@@ -2,61 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Buddhist Center Design System - Colors inspired by saffron robes, lotus flowers, and meditation spaces */
 
 @layer base {
   :root {
-    /* Buddhist-inspired color palette */
-    --background: 42 15% 97%;
-    --foreground: 20 14% 15%;
+    /* Core Buddhist-inspired palette */
+    --background: 32 25% 97%; /* Soft warm white like temple walls */
+    --foreground: 25 25% 25%; /* Warm dark brown for text */
 
-    --card: 42 25% 95%;
-    --card-foreground: 20 14% 15%;
+    --card: 35 30% 95%; /* Warm card background */
+    --card-foreground: 25 25% 25%;
 
-    --popover: 42 25% 95%;
-    --popover-foreground: 20 14% 15%;
+    --popover: 35 30% 95%;
+    --popover-foreground: 25 25% 25%;
 
-    /* Warm saffron/gold primary colors */
-    --primary: 45 85% 52%;
-    --primary-foreground: 42 25% 95%;
-    --primary-glow: 45 95% 65%;
+    /* Saffron/Gold primary colors */
+    --primary: 45 85% 55%; /* Warm saffron gold #D4AF37 */
+    --primary-foreground: 0 0% 100%; /* Pure white text on gold */
+    --primary-glow: 45 85% 65%; /* Lighter saffron for effects */
 
-    /* Soft brown secondary */
-    --secondary: 30 25% 85%;
-    --secondary-foreground: 20 14% 15%;
+    /* Gentle secondary colors */
+    --secondary: 35 15% 88%; /* Soft beige */
+    --secondary-foreground: 25 25% 25%;
 
-    /* Gentle earth tones */
-    --muted: 35 20% 90%;
-    --muted-foreground: 20 10% 45%;
+    /* Muted earth tones */
+    --muted: 30 20% 90%; /* Light warm grey */
+    --muted-foreground: 25 15% 45%; /* Softer text */
 
     /* Lotus pink accent */
-    --accent: 340 35% 88%;
-    --accent-foreground: 20 14% 15%;
+    --accent: 340 35% 85%; /* Gentle lotus pink */
+    --accent-foreground: 25 25% 25%;
+
+    /* Peaceful lotus colors */
+    --lotus: 300 25% 75%; /* Soft lotus purple */
+    --lotus-foreground: 25 25% 25%;
 
     --destructive: 0 65% 55%;
-    --destructive-foreground: 42 25% 95%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 30 20% 88%;
-    --input: 30 20% 88%;
-    --ring: 45 85% 52%;
+    --border: 35 20% 85%; /* Warm border */
+    --input: 35 20% 85%;
+    --ring: 45 85% 55%; /* Golden focus ring */
 
-    --radius: 0.75rem;
-
-    /* Custom Buddhist design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-peaceful: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
-    --gradient-sunset: linear-gradient(135deg, hsl(45 95% 65%), hsl(25 85% 60%));
+    /* Design tokens for Buddhist aesthetics */
+    --warm-stone: 35 20% 80%; /* Temple stone color */
+    --meditation-blue: 210 25% 70%; /* Calm sky blue */
+    --incense-grey: 30 10% 60%; /* Soft incense smoke */
     
-    /* Peaceful shadows */
-    --shadow-temple: 0 10px 30px -10px hsl(var(--primary) / 0.3);
-    --shadow-gentle: 0 4px 20px -8px hsl(var(--primary) / 0.2);
-    --shadow-lotus: 0 0 40px hsl(var(--accent) / 0.4);
+    /* Gradients for peaceful effects */
+    --gradient-hero: linear-gradient(135deg, hsl(45 85% 55%), hsl(45 85% 65%));
+    --gradient-peaceful: linear-gradient(180deg, hsl(32 25% 97%), hsl(35 30% 95%));
+    --gradient-sunset: linear-gradient(135deg, hsl(25 60% 60%), hsl(45 85% 55%));
 
-    /* Smooth transitions */
-    --transition-peaceful: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-gentle: all 0.3s ease-out;
+    /* Shadows with warm golden glow */
+    --shadow-peaceful: 0 4px 20px hsl(45 85% 55% / 0.15);
+    --shadow-golden: 0 8px 30px hsl(45 85% 55% / 0.25);
+    --shadow-soft: 0 2px 10px hsl(25 25% 25% / 0.1);
+
+    /* Smooth transitions for mindful interactions */
+    --transition-gentle: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-smooth: all 0.3s ease-out;
+
+    --radius: 0.75rem; /* Slightly more rounded for softer feel */
 
     --sidebar-background: 0 0% 98%;
 
@@ -120,57 +127,6 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
-  }
-}
-
-@layer components {
-  /* Buddhist-inspired component styles */
-  .btn-donate {
-    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground;
-    @apply font-semibold px-6 py-3 rounded-lg;
-    @apply transition-all duration-300;
-    @apply hover:shadow-temple hover:scale-105;
-    @apply active:scale-95;
-  }
-
-  .btn-peaceful {
-    @apply bg-secondary text-secondary-foreground border border-border;
-    @apply px-6 py-3 rounded-lg font-medium;
-    @apply hover:bg-muted hover:shadow-gentle;
-    transition: var(--transition-gentle);
-  }
-
-  .section-peaceful {
-    @apply py-16 px-4;
-  }
-
-  .card-temple {
-    @apply bg-card border border-border rounded-xl p-6;
-    @apply shadow-gentle hover:shadow-temple;
-    transition: var(--transition-peaceful);
-  }
-
-  .text-peaceful {
-    @apply text-muted-foreground leading-relaxed;
-  }
-
-  .hero-text {
-    @apply text-4xl md:text-6xl font-bold text-foreground;
-    @apply bg-gradient-to-br from-foreground to-primary;
-    @apply bg-clip-text text-transparent;
-  }
-
-  .nav-link {
-    @apply text-foreground/80 hover:text-primary font-medium;
-    @apply transition-colors duration-200;
-    @apply relative after:content-[''] after:absolute after:w-full after:scale-x-0;
-    @apply after:h-0.5 after:bottom-0 after:left-0 after:bg-primary;
-    @apply after:origin-bottom-right after:transition-transform after:duration-300;
-    @apply hover:after:scale-x-100 hover:after:origin-bottom-left;
-  }
-
-  .scroll-smooth {
-    scroll-behavior: smooth;
+    @apply bg-background text-foreground;
   }
 }
