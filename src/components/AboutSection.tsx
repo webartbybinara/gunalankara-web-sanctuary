@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flower, Users, Heart, Star } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 import lotusImage from '@/assets/lotus-flower.jpg';
 
 const AboutSection = () => {
@@ -59,17 +60,19 @@ const AboutSection = () => {
                 description: 'Connecting global communities through compassion and meaningful action.'
               }
             ].map((value, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
-                  <value.icon className="w-8 h-8 text-primary" />
-                </div>
-                <h4 className="text-xl font-serif font-semibold text-foreground mb-2">
-                  {value.title}
-                </h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
+              <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card/50 backdrop-blur-sm border-border/50">
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                    <value.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h4 className="text-xl font-serif font-semibold text-foreground mb-3">
+                    {value.title}
+                  </h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {value.description}
+                  </p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
