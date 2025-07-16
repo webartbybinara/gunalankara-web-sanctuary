@@ -12,7 +12,7 @@ const AboutSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="space-y-6">
               <h3 className="text-2xl sm:text-3xl font-serif font-semibold text-foreground">
-                Our Mission of Compassion
+                About us
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 At our core, we are a compassionate community-driven foundation committed to building a disciplined, spiritually enriched, and united society. Guided by the timeless teachings of the Buddha, we work to uplift individuals and families through meaningful educational, religious, and social initiatives.
