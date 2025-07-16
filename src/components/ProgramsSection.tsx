@@ -1,89 +1,109 @@
 import React from 'react';
-import { Heart, Users, BookOpen, Home, Flower, Calendar, TreePine, HandHeart, School, Smile, Leaf, Baby, Globe, Wheat, Volleyball, Recycle } from 'lucide-react';
+import { BookOpen, School, Users, TreePine, Recycle, Baby, Volleyball, Heart, Home, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const ProgramsSection = () => {
-  const programs = [
+  const programCategories = [
     {
-      title: 'Elderly Programs',
-      description: 'Bringing joy to seniors through special care events',
-      icon: Heart,
+      category: "Educational Programs",
+      programs: [
+        {
+          title: 'Dhamma School for Children',
+          description: 'Regular Sunday classes to guide children with Buddhist teachings and values',
+          icon: BookOpen,
+        },
+        {
+          title: 'Free Extra Classes for Students',
+          description: 'Educational support for schoolchildren who need academic help at no cost',
+          icon: School,
+        },
+        {
+          title: 'Pirivena Quality Development Program',
+          description: 'Improving teaching standards and facilities in monastic schools',
+          icon: BookOpen,
+        },
+        {
+          title: 'Moral Education Workshops',
+          description: 'Training sessions to instill discipline and ethical thinking in youth',
+          icon: Users,
+        },
+      ]
     },
     {
-      title: 'Full Moon Alms Giving',
-      description: 'Monthly Poya Day rituals and offerings',
-      icon: Calendar,
+      category: "Community & Environment Programs",
+      programs: [
+        {
+          title: 'Tree Planting Campaigns',
+          description: 'Reforestation and eco-awareness events for a greener Sri Lanka',
+          icon: TreePine,
+        },
+        {
+          title: 'Community Service (Shramadana)',
+          description: 'Clean-up and maintenance drives connecting temples and local villagers',
+          icon: Users,
+        },
+        {
+          title: 'Beautification Projects',
+          description: 'Volunteer-driven efforts to create clean, welcoming public spaces',
+          icon: Recycle,
+        },
+        {
+          title: 'Crop Cultivation Projects',
+          description: 'Events to promote essential agricultural practices for national sustainability',
+          icon: TreePine,
+        },
+      ]
     },
     {
-      title: 'Honoring Monks',
-      description: 'Supporting those who protect the Dhamma',
-      icon: HandHeart,
+      category: "Child & Youth Empowerment",
+      programs: [
+        {
+          title: 'Support for Novice Monks',
+          description: 'Collecting school supplies and donations to assist young monks in education',
+          icon: BookOpen,
+        },
+        {
+          title: 'Parent-Child Bonding Programs',
+          description: 'Activities that strengthen the relationship between children and their families',
+          icon: Baby,
+        },
+        {
+          title: 'New Year Celebrations for Children',
+          description: 'Fun-filled Avurudu events to spread joy among children in rural areas',
+          icon: Heart,
+        },
+        {
+          title: 'Youth Sports Development',
+          description: 'Sports events to encourage teamwork, health, and personal growth',
+          icon: Volleyball,
+        },
+      ]
     },
     {
-      title: 'Dhamma School',
-      description: 'Guiding children through righteous education',
-      icon: BookOpen,
-    },
-    {
-      title: 'Free Classes',
-      description: 'Supporting school children with education',
-      icon: School,
-    },
-    {
-      title: 'Moral Education',
-      description: 'Nurturing disciplined, compassionate youth',
-      icon: Smile,
-    },
-    {
-      title: 'Shramadana & Public Work',
-      description: 'Serving the village community',
-      icon: Users,
-    },
-    {
-      title: 'Green Programs',
-      description: 'Tree planting for a sustainable future',
-      icon: TreePine,
-    },
-    {
-      title: 'Support for Vulnerable Families',
-      description: 'Shelter, relief, school supplies',
-      icon: Home,
-    },
-    {
-      title: 'New Year Festivals',
-      description: 'Celebrations that unite families and culture',
-      icon: Flower,
-    },
-    {
-      title: 'Pirivena Development',
-      description: 'Enhancing monastic learning',
-      icon: BookOpen,
-    },
-    {
-      title: 'Sports & Wellness',
-      description: 'Engaging youth through health and sports',
-      icon: Volleyball,
-    },
-    {
-      title: 'Clean Environment Drives',
-      description: 'Voluntary efforts for beauty and hygiene',
-      icon: Recycle,
-    },
-    {
-      title: 'Parent-Child Programs',
-      description: 'Strengthening family bonds',
-      icon: Baby,
-    },
-    {
-      title: 'Global Meditation Events',
-      description: 'Connecting foreign and local communities',
-      icon: Globe,
-    },
-    {
-      title: 'Crop Cultivation Projects',
-      description: 'Sustainability through farming',
-      icon: Wheat,
+      category: "Social Welfare Initiatives",
+      programs: [
+        {
+          title: 'Elderly Care Programs',
+          description: 'Events organized to engage and support senior citizens with respect and joy',
+          icon: Heart,
+        },
+        {
+          title: 'Support for the Vulnerable',
+          description: 'Providing aid to underprivileged and marginalized communities',
+          icon: Users,
+        },
+        {
+          title: 'Home Building for the Homeless',
+          description: 'Projects to construct safe housing for people in need',
+          icon: Home,
+        },
+        {
+          title: 'Poya Day Alms-Giving',
+          description: 'Monthly alms-giving events held on every full moon day to promote generosity and merit',
+          icon: Calendar,
+        },
+      ]
     }
   ];
 
@@ -94,32 +114,41 @@ const ProgramsSection = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
-              Our Programs
+              Our Community Programs
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Discover various paths to spiritual growth through our carefully designed programs 
+              Discover various paths to spiritual growth and community service through our carefully designed programs 
               that cater to practitioners of all experience levels.
             </p>
           </div>
 
-          {/* Programs Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
-            {programs.map((program, index) => (
-              <Card key={index} className="group hover:shadow-golden transition-all duration-300 border-border/50 text-center">
-                <CardHeader className="pb-4">
-                  <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                    <program.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg font-serif font-semibold">
-                    {program.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-muted-foreground text-sm">
-                    {program.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+          {/* Programs by Category */}
+          <div className="space-y-12 mb-16">
+            {programCategories.map((category, categoryIndex) => (
+              <div key={categoryIndex}>
+                <h3 className="text-2xl font-serif font-semibold text-foreground mb-6 text-center">
+                  {category.category}
+                </h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {category.programs.map((program, programIndex) => (
+                    <Card key={programIndex} className="group hover:shadow-golden transition-all duration-300 border-border/50 text-center">
+                      <CardHeader className="pb-4">
+                        <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                          <program.icon className="w-6 h-6 text-primary" />
+                        </div>
+                        <CardTitle className="text-lg font-serif font-semibold">
+                          {program.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-muted-foreground text-sm">
+                          {program.description}
+                        </CardDescription>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
 
