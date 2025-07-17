@@ -36,22 +36,22 @@ const EventGallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-20 bg-muted/30">
+    <section id="gallery" className="py-12 sm:py-16 lg:py-20 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4 sm:mb-6">
               Event Memories
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
               Cherished moments from our community programs, religious ceremonies, and educational activities 
               that bring our temple family together in the spirit of Dhamma.
             </p>
           </div>
 
           {/* Gallery Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {eventImages.map((image, index) => (
               <Card key={index} className="group overflow-hidden hover:shadow-golden transition-all duration-300 border-border/50">
                 <CardContent className="p-0">
@@ -59,15 +59,9 @@ const EventGallery = () => {
                     <img
                       src={image.src}
                       alt={image.alt}
-                      className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-48 sm:h-56 lg:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
-                      <h3 className="text-foreground font-serif font-semibold text-lg leading-tight">
-                        {image.title}
-                      </h3>
-                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -75,8 +69,8 @@ const EventGallery = () => {
           </div>
 
           {/* Bottom Message */}
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground italic">
+          <div className="text-center mt-8 sm:mt-12">
+            <p className="text-sm sm:text-base text-muted-foreground italic px-4">
               "Through community service and shared practice, we cultivate compassion and wisdom together"
             </p>
           </div>
